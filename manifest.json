@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "FiltroAutomatico",
+  "version": "1.0.0",
+  "description": "Carga un archivo Excel con Cuentas y seleciona las cuentas que se desean filtrar",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://*/*"], 
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/logooomapasgris.png",
+      "48": "images/logooomapasgris.png",
+      "128": "images/logooomapasgris.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js", "validator.js"]
+    }
+  ]
+}
