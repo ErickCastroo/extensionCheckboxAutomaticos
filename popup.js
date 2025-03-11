@@ -39,7 +39,7 @@ document.getElementById("fileInput").addEventListener("change", function (event)
               console.error("Error al comunicarse con la página. Asegúrate de que estás en la página correcta.");
             }
             if (response && response.success) {
-              alert(`Se encontraron ${response.total} coincidencias en la tabla.`);
+              alert(`Seleccionados correctamente`);
             } else {
               alert("No se encontraron coincidencias en la tabla.");
             }
