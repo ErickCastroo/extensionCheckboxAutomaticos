@@ -19,10 +19,12 @@ function marcarCheckboxes(folios) {
 
   // Iterar sobre las filas de la tabla
   filas.forEach(fila => {
-    const cuenta = fila.querySelector("td:nth-child(2) span")?.innerText.trim(); // Cambiado a la segunda columna para "Cuenta"
+    const cuenta = fila.querySelector("td:nth-child(2) span")?.innerText.trim(); // Normaliza la cuenta en la tabla
     console.log("🔍 Buscando cuenta en fila:", cuenta);
+    console.log("📄 Folios del Excel:", folios);
 
-    if (cuenta && !folios.includes(cuenta)) {
+    // Verificar si la cuenta está en la lista de folios
+    if (cuenta && folios.includes(cuenta)) {
       console.log("✅ Coincidencia encontrada para:", cuenta);
 
       const checkbox = fila.querySelector("td .i-checks input[type='checkbox']");
@@ -44,6 +46,8 @@ function marcarCheckboxes(folios) {
       console.log("✅ Checkbox marcado para:", cuenta);
 
       filasMarcadas.push(fila);
+    } else {
+      console.log("❌ No coincide:", cuenta);
     }
   });
 
