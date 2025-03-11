@@ -36,8 +36,7 @@ document.getElementById("fileInput").addEventListener("change", function (event)
           (response) => {
             if (chrome.runtime.lastError) {
               console.error("Error al enviar mensaje:", chrome.runtime.lastError.message);
-              alert("Error al comunicarse con la página. Asegúrate de que estás en la página correcta.");
-              return;
+              console.error("Error al comunicarse con la página. Asegúrate de que estás en la página correcta.");
             }
             if (response && response.success) {
               alert(`Se encontraron ${response.total} coincidencias en la tabla.`);
@@ -47,8 +46,7 @@ document.getElementById("fileInput").addEventListener("change", function (event)
           }
         );
       });
-    }, 1000); // Esperar 1 segundo antes de enviar el mensaje
+    }, 2000); // Esperar 1 segundo antes de enviar el mensaje
   };
-
   reader.readAsArrayBuffer(file);
 });
